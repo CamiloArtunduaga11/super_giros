@@ -22,16 +22,15 @@ let routingControl = null;
 
 // --- Constantes de URLs (¡ACTUALIZADAS A LA IP PÚBLICA DE TU VM!) ---
 
-// 📢 IP Pública de tu VM donde corren GeoServer (8080) y la API (5000)
-const IP_PUBLICA_VM = 'http://136.113.233.154'; 
+
 
 // GeoServer: Usa el puerto 8080 para las solicitudes WMS
-const geoServerUrl = IP_PUBLICA_VM + ':8080/geoserver/proyecto_lineab/wms'; 
+const geoServerUrl = IP_PUBLICA_VM + '/geoserver/proyecto_lineab/wms'; 
 
 // API Backend: Usa el puerto 5000 para las solicitudes de datos y análisis
-const SUPERGIROS_API_URL = IP_PUBLICA_VM + ':5000/api/v1/supergiros/geojson';
-const BUFFER_API_URL = IP_PUBLICA_VM + ':5000/api/v1/analisis/buffer';
-const INTERSECCION_API_URL = IP_PUBLICA_VM + ':5000/api/v1/analisis/interseccion';
+const SUPERGIROS_API_URL = IP_PUBLICA_VM + '/api/v1/supergiros/geojson';
+const BUFFER_API_URL = IP_PUBLICA_VM + '/api/v1/analisis/buffer';
+const INTERSECCION_API_URL = IP_PUBLICA_VM + '/api/v1/analisis/interseccion';
 
 // Coordenadas aproximadas de Florencia, Caquetá (Latitud, Longitud)
 const FLORENCIA_COORDS = [1.6147, -75.6046];
