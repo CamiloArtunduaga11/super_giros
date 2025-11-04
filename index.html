@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor Corporativo SuperGiros | Florencia</title>
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Clustering -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <!-- Routing -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.0/proj4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="supergiros-background">
+    <div id="app-container">
+
+        <!-- Panel lateral -->
+        <div id="control-panel">
+            <div class="panel-header">
+                <div class="logo-space">
+                    <img src="imagenes/Logo.png" alt="Logo SuperGiros" style="width:100%;border-radius:4px;">
+                </div>
+            </div>
+
+            <section class="tool-section">
+                <h3>Búsqueda Rápida</h3>
+                <input type="text" id="searchInput" placeholder="Nombre de Punto de Venta" class="form-input">
+                <div class="button-group">
+                    <button onclick="searchSuperGiros()" class="btn-primary">Buscar</button>
+                    <button onclick="resetSuperGirosView()" class="btn-secondary">Mostrar Todos</button>
+                </div>
+            </section>
+
+            <hr class="separator">
+
+            <section class="tool-section">
+                <h3>Ruta Más Cercana</h3>
+                <p class="tool-description">Selecciona el origen para encontrar el PDV más cercano dentro del área de
+                    influencia.</p>
+                <div class="button-group-route">
+                    <button onclick="activateRoutingMode('point')" class="btn-route-action">Partir de un Punto</button>
+                </div>
+                <div id="routing-details" class="info-card">
+                    <p>Haga clic en el mapa para iniciar la ruta.</p>
+                </div>
+            </section>
+
+            <hr class="separator">
+
+            <section class="tool-section">
+                <button onclick="loadReportes()">📊 Ver Reportes</button>
+            </section>
+
+            <!-- Contenedor donde aparecerán los reportes -->
+            <div id="reportes-container"></div>
+
+
+            <section class="tool-section">
+                <button onclick="clearAnalysis()" class="btn-danger">Limpiar</button>
+            </section>
+        </div>
+
+        <!-- Contenedor del mapa -->
+        <div id="map"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/map-config.js"></script>
+    <script src="js/map-tools.js"></script>
+    <script src="js/map-layers.js"></script>
+    <script src="js/map-init.js"></script>
+    <script src="js/reports.js"></script>
+</body>
+
+
+
+
+</html>
