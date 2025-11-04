@@ -24,13 +24,17 @@ let routingControl = null;
 
 
 
-// GeoServer: Usa el puerto 8080 para las solicitudes WMS
-const geoServerUrl = IP_PUBLICA_VM + '/geoserver/proyecto_lineab/wms'; 
+// js/map-config.js
 
-// API Backend: Usa el puerto 5000 para las solicitudes de datos y análisis
-const SUPERGIROS_API_URL = IP_PUBLICA_VM + '/api/v1/supergiros/geojson';
-const BUFFER_API_URL = IP_PUBLICA_VM + '/api/v1/analisis/buffer';
-const INTERSECCION_API_URL = IP_PUBLICA_VM + '/api/v1/analisis/interseccion';
+// 📢 GeoServer: Usar la ruta proxy
+const geoServerUrl = '/geoserver/proyecto_lineab/wms'; 
+
+// 📢 API Backend: Usar la ruta proxy
+const SUPERGIROS_API_URL = '/api/v1/supergiros/geojson';
+const BUFFER_API_URL = '/api/v1/analisis/buffer';
+const INTERSECCION_API_URL = '/api/v1/analisis/interseccion';
+// Asume que la URL de registro sigue este patrón:
+const REGISTER_API_URL = '/api/v1/reportes/registrar';
 
 // Coordenadas aproximadas de Florencia, Caquetá (Latitud, Longitud)
 const FLORENCIA_COORDS = [1.6147, -75.6046];
